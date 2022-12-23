@@ -7,6 +7,7 @@ secrets = None
 with open("secrets.json", "r") as f:
     secrets = json.load(f)
 def shows():
+    print("Checking Sonarr")
     # Instantiate SonarrAPI Object
     sonarr = SonarrAPI(secrets["sonarr"]["host"], secrets["sonarr"]["key"])
 
@@ -17,6 +18,7 @@ def shows():
             sonarr.del_series(id_=series["id"], delete_files=True)
         
 def movies():
+    print("Checking Movies")
     # Instantiate SonarrAPI Object
     radarr = RadarrAPI(secrets["radarr"]["host"], secrets["radarr"]["key"])
 
